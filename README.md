@@ -11,6 +11,12 @@ ToS.
 
 ## In action
 
+The scraper writes to SQLite and CSV, but `build_report.py` turns that
+straight into a shareable HTML catalog page, so a client or teammate can
+review the results without opening a database or spreadsheet:
+
+![HTML catalog report generated from scraped data](images/report-catalog.png)
+
 ![Terminal output of a scraper run and test suite](images/terminal-run.png)
 
 ![Retry and backoff logic in scraper.py](images/code-retry-logic.png)
@@ -48,6 +54,9 @@ python scraper.py --pages 2 --category "Travel"
 
 # Custom output location and slower request pace
 python scraper.py --output-dir out/2026-09-26 --delay 2.0
+
+# Turn the scraped data into a shareable HTML catalog page
+python build_report.py --limit 40
 ```
 
 ## Project layout
@@ -55,6 +64,7 @@ python scraper.py --output-dir out/2026-09-26 --delay 2.0
 ```
 web-scraper-toolkit/
 ├── scraper.py            # scraper class, CLI entry point
+├── build_report.py       # turns scraped data into an HTML catalog page
 ├── schedule_scrape.sh    # example cron wrapper for daily runs
 ├── tests/
 │   └── test_scraper.py   # parser unit tests (no network calls)
