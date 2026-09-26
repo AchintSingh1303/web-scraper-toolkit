@@ -9,6 +9,12 @@ sandbox site built specifically for scraping practice, so the project is
 safe to run, demo, and share without hitting anyone's production site or
 ToS.
 
+## In action
+
+![Terminal output of a scraper run and test suite](images/terminal-run.png)
+
+![Retry and backoff logic in scraper.py](images/code-retry-logic.png)
+
 ## Why this design
 
 Freelance scraping requests usually come with the same underlying asks:
@@ -53,6 +59,7 @@ web-scraper-toolkit/
 ├── tests/
 │   └── test_scraper.py   # parser unit tests (no network calls)
 ├── requirements.txt
+├── images/                # screenshots used in this README
 └── output/                # generated CSV/SQLite files land here (gitignored)
 ```
 
